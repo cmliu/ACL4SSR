@@ -33,5 +33,3 @@ jobs:
             git commit -m "更新 adobe.list" || echo "adobe.list 无更新内容"
             git push origin HEAD:main
           fi
-        env:
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
