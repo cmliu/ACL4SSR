@@ -1,3 +1,11 @@
+# These IPs will only block the licensing part of Adobe apps,
+# and shouldn't interfere with any other network option,
+# such as AI generation, downloads, etc.
+# Alternative list using 127.0.0.1 instead of 0.0.0.0
+# can be found at https://adobe.isdumb.one/127.txt
+# Unlicensed window? Report at:
+# https://github.com/ignaciocastro/adobe-is-dumb/issues
+# Last update: 2024-02-26 00:41 UTC
 DOMAIN,ic.adobe.io
 DOMAIN,cc-api-data.adobe.io
 DOMAIN,dyzt55url8.adobe.io
@@ -107,5 +115,3 @@ DOMAIN,zrao5tdh1t.adobestats.io
 DOMAIN,eftcpaiu36.adobestats.io
 DOMAIN,2qj10f8rdg.adobestats.io
 DOMAIN,ffs3xik41x.adobestats.io
-DOMAIN,senseimds.adobe.io
-DOMAIN,aityp.com.adobe.io
