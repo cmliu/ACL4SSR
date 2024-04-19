@@ -29,7 +29,6 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add Clash/adobe.list
-          if [ -n "$(git status --porcelain)" ]; then
-            git commit -m "更新 adobe.list" || echo "adobe.list 无更新内容"
-            git push origin HEAD:main
-          fi
+          git commit -m "Downloaded file on $(date "+%Y/%m/%d %H:%M:%S")"
+          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{github.repository}}.git
+          git push
