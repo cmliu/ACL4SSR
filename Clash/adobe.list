@@ -5,7 +5,7 @@
 # can be found at https://a.dove.isdumb.one/127.txt
 # Unlicensed window? Report at:
 # https://github.com/ignaciocastro/adobe-is-dumb/issues
-# Last update: 2024-05-09 17:25 UTC
+# Last update: 2024-05-14 22:28 UTC
 DOMAIN,ic.adobe.io
 DOMAIN,cc-api-data.adobe.io
 DOMAIN,prod.adobegenuine.com
@@ -13,6 +13,7 @@ DOMAIN,gocart-web-prod-ue1-alb-1461435473.us-east-1.elb.amazonaws.com
 DOMAIN,0mo5a70cqa.adobe.io
 DOMAIN,1b9khekel6.adobe.io
 DOMAIN,1hzopx6nz7.adobe.io
+DOMAIN,22gda3bxkb.adobe.io
 DOMAIN,23ynjitwt5.adobe.io
 DOMAIN,2ftem87osk.adobe.io
 DOMAIN,3ca52znvmj.adobe.io
@@ -30,6 +31,7 @@ DOMAIN,b5kbg2ggog.adobe.io
 DOMAIN,cd536oo20y.adobe.io
 DOMAIN,dxyeyf6ecy.adobe.io
 DOMAIN,dyzt55url8.adobe.io
+DOMAIN,fgh5v09kcn.adobe.io
 DOMAIN,fqaq3pq1o9.adobe.io
 DOMAIN,guzg78logz.adobe.io
 DOMAIN,gw8gfjbs05.adobe.io
@@ -347,3 +349,8 @@ DOMAIN,zrao5tdh1t.adobestats.io
 DOMAIN,zrbzvc9mel.adobestats.io
 DOMAIN,zu8yy3jkaz.adobestats.io
 DOMAIN,zz8r2o83on.adobestats.io
+DOMAIN,6ll72mpyxv.adobestats.io
+DOMAIN,g6elufzgx7.adobestats.io
+DOMAIN,gdtbhgs27n.adobestats.io
+DOMAIN,hciylk3wpv.adobestats.io
+DOMAIN,m8c5gtovwb.adobestats.io
