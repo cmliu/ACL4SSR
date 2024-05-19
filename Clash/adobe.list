@@ -5,7 +5,7 @@
 # can be found at https://a.dove.isdumb.one/127.txt
 # Unlicensed window? Report at:
 # https://github.com/ignaciocastro/adobe-is-dumb/issues
-# Last update: 2024-05-14 22:28 UTC
+# Last update: 2024-05-18 01:55 UTC
 DOMAIN,ic.adobe.io
 DOMAIN,cc-api-data.adobe.io
 DOMAIN,prod.adobegenuine.com
@@ -354,3 +354,10 @@ DOMAIN,g6elufzgx7.adobestats.io
 DOMAIN,gdtbhgs27n.adobestats.io
 DOMAIN,hciylk3wpv.adobestats.io
 DOMAIN,m8c5gtovwb.adobestats.io
+DOMAIN,411r4c18df.adobestats.io
+DOMAIN,475ao55klh.adobestats.io
+DOMAIN,c0cczlv877.adobestats.io
+DOMAIN,fsx0pbg4rz.adobestats.io
+DOMAIN,powfb7xi5v.adobestats.io
+DOMAIN,h3hqd6gjkd.adobestats.io
+DOMAIN,bvcj3prq1u.adobestats.io
