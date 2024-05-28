@@ -2,8 +2,8 @@ name: 更新 Clash/adobe.list
 
 on:
   # 每 3 天运行一次
-  schedule:
-    - cron: '0 0 */3 * *'
+  #schedule:
+  #  - cron: '0 0 */3 * *'
   # 手动触发
   workflow_dispatch:
 
