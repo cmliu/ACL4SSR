@@ -1,11 +1,11 @@
-# These IPs will only block the licensing part of Adobe apps,
+# These IPs will only block the telemetry check of Adobe apps,
 # and shouldn't interfere with any other network option,
 # such as AI generation, downloads, etc.
-# Alternative list using 127.0.0.1 instead of 0.0.0.0
-# can be found at https://a.dove.isdumb.one/127.txt
-# Repository was taken down by a DMCA claim from Adobe.
-# Please check https://t.me/adobeisdumb for updates on the matter.
-# Last update: 2024-06-14 16:27 UTC
+# DOMAIN,can be found in https://a.dove.isdumb.one/list.txt
+# Pop up window? Report at:
+# https://github.com/ignaciocastro/a-dove-is-dumb/issues
+# Or follow updates at https://a.dove.isdumb.one/telegram
+# Last update: 2024-06-18 20:38 UTC
 DOMAIN,ic.adobe.io
 DOMAIN,cc-api-data.adobe.io
 DOMAIN,cc-api-data-stage.adobe.io
@@ -451,3 +451,24 @@ DOMAIN,ktb8rx6uhe.adobestats.io
 DOMAIN,heufuideue.adobestats.io
 DOMAIN,xq68npgl4w.adobestats.io
 DOMAIN,vnm70hlbn4.adobestats.io
+DOMAIN,p4hiwy76wl.adobestats.io
+DOMAIN,q7i4awui0j.adobestats.io
+DOMAIN,soirhk7bm2.adobestats.io
+DOMAIN,0789i4f3cq.adobestats.io
+DOMAIN,827x3zvk4q.adobestats.io
+DOMAIN,8ljcntz31v.adobestats.io
+DOMAIN,95yojg6epq.adobestats.io
+DOMAIN,9wcrtdzcti.adobestats.io
+DOMAIN,a3dxeq2iq9.adobestats.io
+DOMAIN,hrfn4gru1j.adobestats.io
+DOMAIN,kx8yghodgl.adobestats.io
+DOMAIN,olh5t1ccns.adobestats.io
+DOMAIN,svcgy434g6.adobestats.io
+DOMAIN,uwr2upexhs.adobestats.io
+DOMAIN,wk0sculz2x.adobestats.io
+DOMAIN,xbhspynj8t.adobestats.io
+DOMAIN,xod1t4qsyk.adobestats.io
+DOMAIN,iu7mq0jcce.adobestats.io
+DOMAIN,tdatxzi3t4.adobestats.io
+DOMAIN,rptowanjjh.adobestats.io
+DOMAIN,3cnu7l5q8s.adobestats.io
