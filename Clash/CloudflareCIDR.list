@@ -116,7 +116,7 @@ IP-CIDR,103.160.204.0/24,no-resolve
 IP-CIDR,103.169.142.0/24,no-resolve
 IP-CIDR,103.172.110.0/23,no-resolve
 IP-CIDR,103.204.13.0/24,no-resolve
-IP-CIDR,103.245.228.0/23,no-resolve
+IP-CIDR,103.245.229.0/24,no-resolve
 IP-CIDR,104.36.195.0/24,no-resolve
 IP-CIDR,104.129.164.0/22,no-resolve
 IP-CIDR,104.234.239.0/24,no-resolve
@@ -350,7 +350,6 @@ IP-CIDR,185.122.0.0/24,no-resolve
 # AS149648 (RESERVED)
 # APNIC ASN block
 #
-IP-CIDR,103.184.44.0/23,no-resolve
 # AS13335 (CLOUDFLARENET)
 # Cloudflare, Inc.
 #
@@ -477,12 +476,12 @@ IP-CIDR,23.227.38.0/23,no-resolve
 IP-CIDR,23.227.60.0/24,no-resolve
 IP-CIDR,37.153.171.0/24,no-resolve
 IP-CIDR,49.238.236.0/22,no-resolve
+IP-CIDR,64.112.99.0/24,no-resolve
 IP-CIDR,65.110.63.0/24,no-resolve
 IP-CIDR,66.118.0.0/22,no-resolve
 IP-CIDR,66.235.200.0/24,no-resolve
 IP-CIDR,103.21.244.0/24,no-resolve
 IP-CIDR,103.22.200.0/22,no-resolve
-IP-CIDR,103.31.4.0/23,no-resolve
 IP-CIDR,103.81.228.0/24,no-resolve
 IP-CIDR,103.143.32.0/23,no-resolve
 IP-CIDR,103.156.22.0/23,no-resolve
@@ -565,10 +564,10 @@ IP-CIDR,172.66.208.0/21,no-resolve
 IP-CIDR,172.66.216.0/23,no-resolve
 IP-CIDR,172.67.0.0/16,no-resolve
 IP-CIDR,172.68.0.0/19,no-resolve
-IP-CIDR,172.68.32.0/21,no-resolve
-IP-CIDR,172.68.40.0/22,no-resolve
-IP-CIDR,172.68.45.0/24,no-resolve
-IP-CIDR,172.68.46.0/23,no-resolve
+IP-CIDR,172.68.32.0/22,no-resolve
+IP-CIDR,172.68.36.0/24,no-resolve
+IP-CIDR,172.68.38.0/23,no-resolve
+IP-CIDR,172.68.40.0/21,no-resolve
 IP-CIDR,172.68.48.0/21,no-resolve
 IP-CIDR,172.68.56.0/24,no-resolve
 IP-CIDR,172.68.58.0/23,no-resolve
@@ -627,7 +626,12 @@ IP-CIDR,172.69.52.0/22,no-resolve
 IP-CIDR,172.69.56.0/22,no-resolve
 IP-CIDR,172.69.60.0/24,no-resolve
 IP-CIDR,172.69.62.0/23,no-resolve
-IP-CIDR,172.69.64.0/18,no-resolve
+IP-CIDR,172.69.64.0/20,no-resolve
+IP-CIDR,172.69.80.0/22,no-resolve
+IP-CIDR,172.69.84.0/24,no-resolve
+IP-CIDR,172.69.86.0/23,no-resolve
+IP-CIDR,172.69.88.0/21,no-resolve
+IP-CIDR,172.69.96.0/19,no-resolve
 IP-CIDR,172.69.128.0/21,no-resolve
 IP-CIDR,172.69.136.0/22,no-resolve
 IP-CIDR,172.69.140.0/23,no-resolve
