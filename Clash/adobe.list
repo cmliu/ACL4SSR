@@ -2,9 +2,9 @@
 # and shouldn't interfere with any other network option,
 # such as AI generation, downloads, etc.
 # Pop up window? Report at:
-# https://github.com/ignaciocastro/a-dove-is-dumb/issues
+# https://gitlab.com/ignaciocastro/a-dove-is-dumb/-/issues
 # Or follow updates at https://a.dove.isdumb.one/telegram
-# Last update: 2025-05-09 09:33 UTC
+# Last update: 2025-05-12 18:12 UTC
 DOMAIN,ic.adobe.io
 DOMAIN,cc-api-data.adobe.io
 DOMAIN,0mo5a70cqa.adobe.io
@@ -2152,3 +2152,49 @@ DOMAIN,w7ytknrd.ay6tu.adobestats.io
 DOMAIN,mz7ja1bjvp6z.ay6tu.adobestats.io
 DOMAIN,yh0ikejv.ay6tu.adobestats.io
 DOMAIN,pz9tldz1kj.adobestats.io
+DOMAIN,j3gflx38n2h.lqn0m.adobestats.io
+DOMAIN,y4v6xqlf3n.adobestats.io
+DOMAIN,zvtw47k3193.7r39q.adobestats.io
+DOMAIN,q6acppwsal.adobestats.io
+DOMAIN,a3x0s3a0p1.adobestats.io
+DOMAIN,o9oc2veu4a.adobestats.io
+DOMAIN,cumjsvijpm.adobestats.io
+DOMAIN,cfa8gqfl.48fwz.adobestats.io
+DOMAIN,0ptxk7pqrk.adobestats.io
+DOMAIN,1t37dq3qhs.adobestats.io
+DOMAIN,2k30jeezwv.adobestats.io
+DOMAIN,3nu3uxxlkq.adobestats.io
+DOMAIN,5kn4a1u8wo.adobestats.io
+DOMAIN,5qtx7jry6o.adobestats.io
+DOMAIN,66len5n7u0.adobestats.io
+DOMAIN,6gk37iuo7m.adobestats.io
+DOMAIN,7ayavd167e.adobestats.io
+DOMAIN,8wg3vuwjd3.adobestats.io
+DOMAIN,9cfsejznwc.adobestats.io
+DOMAIN,9efc9h8n6u.adobestats.io
+DOMAIN,aawo7paw3n.adobestats.io
+DOMAIN,akaucwwf52.adobestats.io
+DOMAIN,b9jpj7er7v.adobestats.io
+DOMAIN,bg79oajegv.adobestats.io
+DOMAIN,c1ye73nlm6.adobestats.io
+DOMAIN,cic57jqwn3.adobestats.io
+DOMAIN,ekim9d0qp5.adobestats.io
+DOMAIN,f13c118gd7.adobestats.io
+DOMAIN,f13pez1wac.adobestats.io
+DOMAIN,f1f96tas3x.adobestats.io
+DOMAIN,fl61ffddpl.adobestats.io
+DOMAIN,gmqravocyc.adobestats.io
+DOMAIN,h2thyj5nyo.adobestats.io
+DOMAIN,hb0doa1lo8.adobestats.io
+DOMAIN,mqiy2s5exv.adobestats.io
+DOMAIN,qlozozkm6m.adobestats.io
+DOMAIN,r1nyv8b8rn.adobestats.io
+DOMAIN,unu1eocone.adobestats.io
+DOMAIN,w0tllv8o44.adobestats.io
+DOMAIN,zcd8rnmjme.adobestats.io
+DOMAIN,zoyey0w6q9.adobestats.io
+DOMAIN,zqglhojdzp.adobestats.io
+DOMAIN,3ts8nqaa.td3wc.adobestats.io
+DOMAIN,nggjmvrf.td3wc.adobestats.io
+DOMAIN,pgitt5i7.pkxns.adobestats.io
+DOMAIN,dprlikm0.4p4bv.adobestats.io
