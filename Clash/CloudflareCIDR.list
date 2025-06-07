@@ -79,6 +79,7 @@ IP-CIDR,89.116.46.0/24,no-resolve
 IP-CIDR,89.116.161.0/24,no-resolve
 IP-CIDR,89.116.180.0/24,no-resolve
 IP-CIDR,89.116.250.0/24,no-resolve
+IP-CIDR,89.116.252.0/24,no-resolve
 IP-CIDR,89.117.112.0/24,no-resolve
 IP-CIDR,89.207.18.0/24,no-resolve
 IP-CIDR,91.124.127.0/24,no-resolve
@@ -530,6 +531,7 @@ IP-CIDR,154.223.134.0/23,no-resolve
 IP-CIDR,156.243.83.0/24,no-resolve
 IP-CIDR,156.255.123.0/24,no-resolve
 IP-CIDR,159.242.242.0/24,no-resolve
+IP-CIDR,161.248.134.0/24,no-resolve
 IP-CIDR,162.158.0.0/19,no-resolve
 IP-CIDR,162.158.32.0/21,no-resolve
 IP-CIDR,162.158.40.0/22,no-resolve
@@ -541,6 +543,7 @@ IP-CIDR,162.158.59.0/24,no-resolve
 IP-CIDR,162.158.60.0/22,no-resolve
 IP-CIDR,162.158.72.0/21,no-resolve
 IP-CIDR,162.158.80.0/20,no-resolve
+IP-CIDR,162.158.96.0/24,no-resolve
 IP-CIDR,162.158.98.0/23,no-resolve
 IP-CIDR,162.158.100.0/22,no-resolve
 IP-CIDR,162.158.104.0/21,no-resolve
@@ -647,11 +650,11 @@ IP-CIDR,172.69.128.0/20,no-resolve
 IP-CIDR,172.69.144.0/21,no-resolve
 IP-CIDR,172.69.152.0/23,no-resolve
 IP-CIDR,172.69.156.0/22,no-resolve
-IP-CIDR,172.69.160.0/20,no-resolve
-IP-CIDR,172.69.176.0/21,no-resolve
-IP-CIDR,172.69.184.0/22,no-resolve
-IP-CIDR,172.69.188.0/23,no-resolve
-IP-CIDR,172.69.191.0/24,no-resolve
+IP-CIDR,172.69.160.0/22,no-resolve
+IP-CIDR,172.69.164.0/23,no-resolve
+IP-CIDR,172.69.166.0/24,no-resolve
+IP-CIDR,172.69.168.0/21,no-resolve
+IP-CIDR,172.69.176.0/20,no-resolve
 IP-CIDR,172.69.192.0/20,no-resolve
 IP-CIDR,172.69.208.0/24,no-resolve
 IP-CIDR,172.69.210.0/23,no-resolve
@@ -691,7 +694,7 @@ IP-CIDR,172.70.160.0/22,no-resolve
 IP-CIDR,172.70.172.0/22,no-resolve
 IP-CIDR,172.70.176.0/20,no-resolve
 IP-CIDR,172.70.192.0/18,no-resolve
-IP-CIDR,172.71.1.0/24,no-resolve
+IP-CIDR,172.71.0.0/23,no-resolve
 IP-CIDR,172.71.3.0/24,no-resolve
 IP-CIDR,172.71.4.0/22,no-resolve
 IP-CIDR,172.71.8.0/21,no-resolve
@@ -714,13 +717,12 @@ IP-CIDR,172.71.138.0/23,no-resolve
 IP-CIDR,172.71.140.0/24,no-resolve
 IP-CIDR,172.71.144.0/20,no-resolve
 IP-CIDR,172.71.160.0/19,no-resolve
-IP-CIDR,172.71.192.0/22,no-resolve
-IP-CIDR,172.71.196.0/24,no-resolve
+IP-CIDR,172.71.192.0/21,no-resolve
 IP-CIDR,172.71.200.0/24,no-resolve
 IP-CIDR,172.71.204.0/24,no-resolve
 IP-CIDR,172.71.208.0/20,no-resolve
 IP-CIDR,172.71.224.0/24,no-resolve
-IP-CIDR,172.71.226.0/24,no-resolve
+IP-CIDR,172.71.226.0/23,no-resolve
 IP-CIDR,172.71.228.0/22,no-resolve
 IP-CIDR,172.71.232.0/21,no-resolve
 IP-CIDR,172.71.240.0/23,no-resolve
