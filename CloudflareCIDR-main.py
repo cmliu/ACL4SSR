@@ -30,14 +30,16 @@ for root, dirs, files in os.walk("asn-ip-master/as"):
 # 正则表达式用于匹配IPv4地址和子网掩码
 ipv4_regex = re.compile(r'^(\d{1,3}\.){3}\d{1,3}(/\d{1,2})$')
 
-# 将结果写入一个新的文件
-with open('Clash/CloudflareCIDR.list', 'w') as file:
+# 将结果写入两个文件
+with open('Clash/CloudflareCIDR.list', 'w') as clash_file, \
+     open('CloudflareCIDR.txt', 'w') as cidr_file:
   for ip in ip_addresses:
     # 检查IP是否符合IPv4/子网掩码格式
     if ipv4_regex.match(ip):
-      file.write(f"IP-CIDR,{ip},no-resolve\n")
+      clash_file.write(f"IP-CIDR,{ip},no-resolve\n")
+      cidr_file.write(f"{ip}\n")
     else:
-      file.write(f"{ip}\n")
+      clash_file.write(f"{ip}\n")
 
 # 清理下载的zip文件和解压的文件夹
 os.remove("master.zip")
