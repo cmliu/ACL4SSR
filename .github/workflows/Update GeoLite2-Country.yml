@@ -1,0 +1,64 @@
+name: "Update GeoLite2-Country.mmdb IP库每周更新"
+
+on:
+  schedule:
+    - cron: '0 0 * * 1'  # 每周一零点执行
+  workflow_dispatch:  # 手动触发
+
+permissions:
+  contents: write
+
+jobs:
+  update-mmdb:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Download and update GeoLite2-Country.mmdb
+      run: |
+        echo "开始下载 GeoLite2-Country.mmdb..."
+        
+        # 下载文件，添加重试机制
+        for i in {1..3}; do
+          if wget --timeout=30 --tries=3 https://github.com/P3TERX/GeoLite.mmdb/raw/download/GeoLite2-Country.mmdb -O GeoLite2-Country.mmdb.tmp; then
+            echo "下载成功"
+            mv GeoLite2-Country.mmdb.tmp GeoLite2-Country.mmdb
+            break
+          else
+            echo "下载失败，重试 $i/3"
+            sleep 10
+          fi
+        done
+        
+        # 检查下载是否成功
+        if [ ! -f "GeoLite2-Country.mmdb" ]; then
+          echo "下载失败，退出"
+          exit 1
+        fi
+        
+        # 验证文件大小（防止下载到错误页面）
+        file_size=$(stat -f%z GeoLite2-Country.mmdb 2>/dev/null || stat -c%s GeoLite2-Country.mmdb)
+        if [ "$file_size" -lt 1000000 ]; then  # 小于1MB可能是错误文件
+          echo "下载的文件大小异常: ${file_size} bytes"
+          exit 1
+        fi
+        
+        echo "文件大小: ${file_size} bytes"
+
+    - name: Commit and push if changed
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        
+        # 检查文件是否有变化
+        if git diff --quiet GeoLite2-Country.mmdb; then
+          echo "GeoLite2-Country.mmdb 文件没有变化，跳过提交"
+        else
+          echo "检测到 GeoLite2-Country.mmdb 文件有变化，开始提交"
+          git add GeoLite2-Country.mmdb
+          git commit -m "🔄 更新IP库文件 $(date '+%Y-%m-%d %H:%M:%S')"
+          git push
+          echo "提交完成"
+        fi
