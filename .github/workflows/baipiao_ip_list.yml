@@ -9,73 +9,93 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: 检出代码仓库
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Install mmdb-bin
         run: sudo apt install mmdb-bin -y
 
+      - name: 检查 GeoLite2-Country.mmdb 文件
+        run: |
+          if [ ! -f "GeoLite2-Country.mmdb" ]; then
+            echo "GeoLite2-Country.mmdb 文件不存在，正在下载..."
+            wget --timeout=30 --tries=3 https://github.com/P3TERX/GeoLite.mmdb/raw/download/GeoLite2-Country.mmdb -O GeoLite2-Country.mmdb
+            if [ ! -f "GeoLite2-Country.mmdb" ]; then
+              echo "下载 GeoLite2-Country.mmdb 失败"
+              exit 1
+            fi
+          else
+            echo "GeoLite2-Country.mmdb 文件已存在"
+          fi
+
       - name: 下载并处理IP文件
         run: |
+          echo "开始下载IP文件..."
           # 下载zip文件
-          wget https://zip.baipiao.eu.org -O ip.zip
+          if ! wget https://zip.baipiao.eu.org -O ip.zip; then
+            echo "下载 ip.zip 失败"
+            exit 1
+          fi
           
           # 创建baipiao目录并解压
           mkdir -p baipiao
-          unzip ip.zip -d baipiao
+          if ! unzip ip.zip -d baipiao; then
+            echo "解压 ip.zip 失败"
+            exit 1
+          fi
           
+          echo "解压完成，开始处理文件..."
           > ip_list.txt
           
-          # 处理443端口的IP文件
-          for file in baipiao/*-443.txt; do
-            if [ -f "$file" ]; then
-              sed 's/$/&:443/' "$file" >> ip_list.txt
-            fi
+          # 处理各个端口的IP文件
+          ports=(443 2053 2083 2087 2096 8443)
+          for port in "${ports[@]}"; do
+            echo "处理端口 $port 的文件..."
+            for file in baipiao/*-${port}.txt; do
+              if [ -f "$file" ]; then
+                echo "处理文件: $file"
+                sed "s/$/&:${port}/" "$file" >> ip_list.txt
+              fi
+            done
           done
           
-          # 处理2053端口的IP文件
-          for file in baipiao/*-2053.txt; do
-            if [ -f "$file" ]; then
-              sed 's/$/&:2053/' "$file" >> ip_list.txt
-            fi
-          done
-          
-          # 处理2083端口的IP文件
-          for file in baipiao/*-2083.txt; do
-            if [ -f "$file" ]; then
-              sed 's/$/&:2083/' "$file" >> ip_list.txt
-            fi
-          done
-          
-          # 处理2087端口的IP文件
-          for file in baipiao/*-2087.txt; do
-            if [ -f "$file" ]; then
-              sed 's/$/&:2087/' "$file" >> ip_list.txt
-            fi
-          done
-          
-          # 处理2096端口的IP文件
-          for file in baipiao/*-2096.txt; do
-            if [ -f "$file" ]; then
-              sed 's/$/&:2096/' "$file" >> ip_list.txt
-            fi
-          done
-          
-          # 处理8443端口的IP文件
-          for file in baipiao/*-8443.txt; do
-            if [ -f "$file" ]; then
-              sed 's/$/&:8443/' "$file" >> ip_list.txt
-            fi
-          done
+          echo "处理完成，检查 ip_list.txt 文件大小..."
+          if [ ! -s ip_list.txt ]; then
+            echo "警告: ip_list.txt 文件为空"
+            ls -la baipiao/
+          else
+            echo "ip_list.txt 文件大小: $(wc -l < ip_list.txt) 行"
+          fi
 
       - name: 识别IP地址的国家代码
         run: |
+          echo "开始识别IP地址的国家代码..."
           > baipiao.txt
-          while IFS= read -r line
-          do
+          
+          if [ ! -s ip_list.txt ]; then
+            echo "ip_list.txt 文件为空，跳过国家代码识别"
+            exit 0
+          fi
+          
+          while IFS= read -r line; do
+            if [ -z "$line" ]; then
+              continue
+            fi
+            
             ip=$(echo "$line" | grep -oE "\b([0-9]{1,3}\.){3}[0-9]{1,3}\b")
-            country_code=$(mmdblookup --file GeoLite2-Country.mmdb --ip "$ip" country iso_code | awk -F'"' '{print $2}' | tr -d '\n')
+            if [ -z "$ip" ]; then
+              echo "无法从行中提取IP: $line"
+              continue
+            fi
+            
+            country_code=$(mmdblookup --file GeoLite2-Country.mmdb --ip "$ip" country iso_code 2>/dev/null | awk -F'"' '{print $2}' | tr -d '\n')
+            if [ -z "$country_code" ]; then
+              country_code="UNKNOWN"
+            fi
+            
             echo "$line#$country_code" >> baipiao.txt
           done < ip_list.txt
+          
+          echo "国家代码识别完成，生成的文件大小: $(wc -l < baipiao.txt) 行"
 
       - name: 提交更新的IP库文件
         run: |
@@ -83,11 +103,17 @@ jobs:
           git config --local user.name "GitHub Action"
           
           # 检查文件是否有变化
-          if git diff --quiet baipiao.txt; then
+          if [ ! -f baipiao.txt ] || [ ! -s baipiao.txt ]; then
+            echo "baipiao.txt 文件不存在或为空，跳过提交"
+            exit 0
+          fi
+          
+          if git diff --quiet baipiao.txt 2>/dev/null; then
             echo "baipiao.txt 文件没有变化，跳过提交"
           else
             echo "检测到 baipiao.txt 文件有变化，开始提交"
             git add baipiao.txt
-            git commit -m "更新IP库文件"
+            git commit -m "更新IP库文件 $(date '+%Y-%m-%d %H:%M:%S')"
             git push
+            echo "提交完成"
           fi
