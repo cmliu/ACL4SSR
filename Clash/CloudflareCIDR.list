@@ -1,33 +1,5 @@
-# AS132892 (CLOUDFLARE)
-# Cloudflare, Inc.
-#
-IP-CIDR,103.21.246.0/23,no-resolve
-IP-CIDR,104.22.240.0/20,no-resolve
-IP-CIDR,104.23.0.0/19,no-resolve
-IP-CIDR,141.101.88.0/23,no-resolve
-IP-CIDR,172.69.24.0/21,no-resolve
-IP-CIDR,172.70.0.0/19,no-resolve
-IP-CIDR,172.70.64.0/20,no-resolve
-IP-CIDR,198.41.144.0/22,no-resolve
-IP-CIDR,198.41.148.0/24,no-resolve
-IP-CIDR,198.41.243.0/24,no-resolve
-IP-CIDR,198.41.245.0/24,no-resolve
-IP-CIDR,198.41.246.0/23,no-resolve
-IP-CIDR,198.41.248.0/24,no-resolve
-IP-CIDR,198.41.250.0/23,no-resolve
-IP-CIDR,198.41.254.0/23,no-resolve
-# AS203898 (CLOUDFLARENET-UK)
-# Cloudflare Inc
-#
-IP-CIDR,185.122.0.0/24,no-resolve
-# AS394536 (CLOUDFLARENET-SFO)
-# Cloudflare, Inc.
-#
 # AS139242 (CSL-AP)
 # Cloudflare Sydney, LLC
-#
-# AS149648 (RESERVED)
-# APNIC ASN block
 #
 # AS209242 (CLOUDFLARESPECTRUM)
 # Cloudflare London, LLC
@@ -347,16 +319,6 @@ IP-CIDR,216.198.53.0/24,no-resolve
 IP-CIDR,216.198.54.0/24,no-resolve
 IP-CIDR,216.205.52.0/24,no-resolve
 IP-CIDR,223.27.176.0/23,no-resolve
-# AS202623 (CLOUDFLARENET-CORE)
-# Cloudflare Inc
-#
-IP-CIDR,104.23.64.0/19,no-resolve
-IP-CIDR,141.101.64.0/24,no-resolve
-IP-CIDR,141.101.91.0/24,no-resolve
-IP-CIDR,172.71.32.0/19,no-resolve
-IP-CIDR,172.71.64.0/20,no-resolve
-IP-CIDR,198.41.150.0/24,no-resolve
-IP-CIDR,198.41.253.0/24,no-resolve
 # AS13335 (CLOUDFLARENET)
 # Cloudflare, Inc.
 #
@@ -789,3 +751,41 @@ IP-CIDR,212.104.128.0/24,no-resolve
 IP-CIDR,216.19.107.0/24,no-resolve
 IP-CIDR,216.224.121.0/24,no-resolve
 IP-CIDR,217.180.22.0/24,no-resolve
+# AS132892 (CLOUDFLARE)
+# Cloudflare, Inc.
+#
+IP-CIDR,103.21.246.0/23,no-resolve
+IP-CIDR,104.22.240.0/20,no-resolve
+IP-CIDR,104.23.0.0/19,no-resolve
+IP-CIDR,141.101.88.0/23,no-resolve
+IP-CIDR,172.69.24.0/21,no-resolve
+IP-CIDR,172.70.0.0/19,no-resolve
+IP-CIDR,172.70.64.0/20,no-resolve
+IP-CIDR,198.41.144.0/22,no-resolve
+IP-CIDR,198.41.148.0/24,no-resolve
+IP-CIDR,198.41.243.0/24,no-resolve
+IP-CIDR,198.41.245.0/24,no-resolve
+IP-CIDR,198.41.246.0/23,no-resolve
+IP-CIDR,198.41.248.0/24,no-resolve
+IP-CIDR,198.41.250.0/23,no-resolve
+IP-CIDR,198.41.254.0/23,no-resolve
+# AS203898 (CLOUDFLARENET-UK)
+# Cloudflare Inc
+#
+IP-CIDR,185.122.0.0/24,no-resolve
+# AS394536 (CLOUDFLARENET-SFO)
+# Cloudflare, Inc.
+#
+# AS149648 (RESERVED)
+# APNIC ASN block
+#
+# AS202623 (CLOUDFLARENET-CORE)
+# Cloudflare Inc
+#
+IP-CIDR,104.23.64.0/19,no-resolve
+IP-CIDR,141.101.64.0/24,no-resolve
+IP-CIDR,141.101.91.0/24,no-resolve
+IP-CIDR,172.71.32.0/19,no-resolve
+IP-CIDR,172.71.64.0/20,no-resolve
+IP-CIDR,198.41.150.0/24,no-resolve
+IP-CIDR,198.41.253.0/24,no-resolve
