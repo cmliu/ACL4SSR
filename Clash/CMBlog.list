@@ -1,3 +1,6 @@
 DOMAIN,blog.090227.xyz
 DOMAIN,blog.cmliussss.com
 DOMAIN,chinaip.090227.xyz
+IP-CIDR,8.8.8.0/24,no-resolve
+IP-CIDR,8.8.4.0/24,no-resolve
+IP-CIDR,101.101.101.0/24,no-resolve
