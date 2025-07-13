@@ -25,11 +25,19 @@ jobs:
     - name: Download File
       run: python CloudflareCIDR-main.py  # 这里 CloudflareCIDR-main.py 处理文件
 
-    - name: Commit and Push
+    - name: Check for changes and commit
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
         git add .
-        git commit -m "Downloaded file on $(date "+%Y/%m/%d %H:%M:%S")"
-        git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{github.repository}}.git
-        git push
+        
+        # 检查是否有变更
+        if git diff --cached --quiet; then
+          echo "没有文件变更，跳过提交"
+        else
+          echo "检测到文件变更，开始提交"
+          git commit -m "Downloaded file on $(date "+%Y/%m/%d %H:%M:%S")"
+          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{github.repository}}.git
+          git push
+          echo "提交完成"
+        fi

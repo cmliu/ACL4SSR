@@ -1,0 +1,55 @@
+name: 更新白嫖IP库
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '30 4,16 * * *'  # 每天的8点、16点执行（UTC时间）
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 检出代码仓库
+        uses: actions/checkout@v4
+
+      - name: Check URL status
+        id: check_url
+        run: |
+          STATUS_CODE=$(curl -s -o /dev/null -w "%{http_code}" "https://raw.cmliussss.com/ProxyIP/ProxyIP.txt")
+          echo "Status code: $STATUS_CODE"
+          if [ "$STATUS_CODE" = "200" ]; then
+            echo "url_status_ok=true" >> $GITHUB_OUTPUT
+            echo "URL 响应正常，状态码为 200"
+          else
+            echo "url_status_ok=false" >> $GITHUB_OUTPUT
+            echo "URL 响应异常，状态码为 $STATUS_CODE，将跳过后续步骤"
+          fi
+
+      - name: Download
+        if: steps.check_url.outputs.url_status_ok == 'true'
+        run: |
+          curl -L "https://raw.cmliussss.com/ProxyIP/ProxyIP.txt" -o baipiao.txt
+
+      - name: 提交更新的IP库文件
+        if: steps.check_url.outputs.url_status_ok == 'true'
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          
+          # 检查文件是否有变化
+          if [ ! -f baipiao.txt ] || [ ! -s baipiao.txt ]; then
+            echo "baipiao.txt 文件不存在或为空，跳过提交"
+            exit 0
+          fi
+          
+          if git diff --quiet baipiao.txt 2>/dev/null; then
+            echo "baipiao.txt 文件没有变化，跳过提交"
+          else
+            echo "检测到 baipiao.txt 文件有变化，开始提交"
+            git add baipiao.txt
+            git commit -m "更新IP库文件 $(date '+%Y-%m-%d %H:%M:%S')"
+            git push
+            echo "提交完成"
+          fi
