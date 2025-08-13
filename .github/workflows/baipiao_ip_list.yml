@@ -14,10 +14,25 @@ jobs:
       - name: 检出代码仓库
         uses: actions/checkout@v4
 
+      - name: Check PROXYIP_URL variable
+        run: |
+          # 检查是否设置了PROXYIP_URL变量
+          PROXYIP_URL="${{ vars.PROXYIP_URL }}"
+          if [ -z "$PROXYIP_URL" ]; then
+            echo "❌ 错误: 未设置 PROXYIP_URL 变量"
+            echo "请在仓库设置中添加 PROXYIP_URL 变量："
+            echo "1. 进入仓库 Settings > Secrets and variables > Actions"
+            echo "2. 在 Variables 标签页中添加新变量"
+            echo "3. Name: PROXYIP_URL"
+            echo "4. Value: 配置文件的URL地址"
+            exit 1
+          fi
+          echo "✅ PROXYIP_URL 变量已设置: $PROXYIP_URL"
+
       - name: Check URL status
         id: check_url
         run: |
-          STATUS_CODE=$(curl -s -o /dev/null -w "%{http_code}" "https://raw.cmliussss.com/ProxyIP/ProxyIP.txt")
+          STATUS_CODE=$(curl -s -o /dev/null -w "%{http_code}" "$PROXYIP_URL")
           echo "Status code: $STATUS_CODE"
           if [ "$STATUS_CODE" = "200" ]; then
             echo "url_status_ok=true" >> $GITHUB_OUTPUT
@@ -30,7 +45,7 @@ jobs:
       - name: Download
         if: steps.check_url.outputs.url_status_ok == 'true'
         run: |
-          curl -L "https://raw.cmliussss.com/ProxyIP/ProxyIP.txt" -o baipiao.txt
+          curl -L "$PROXYIP_URL" -o baipiao.txt
 
       - name: 提交更新的IP库文件
         if: steps.check_url.outputs.url_status_ok == 'true'
