@@ -159,7 +159,6 @@ IP-CIDR,154.84.14.0/23,no-resolve
 IP-CIDR,154.84.16.0/21,no-resolve
 IP-CIDR,154.84.24.0/22,no-resolve
 IP-CIDR,154.85.8.0/22,no-resolve
-IP-CIDR,154.85.99.0/24,no-resolve
 IP-CIDR,154.92.9.0/24,no-resolve
 IP-CIDR,154.94.8.0/23,no-resolve
 IP-CIDR,154.194.12.0/24,no-resolve
@@ -562,6 +561,7 @@ IP-CIDR,104.29.67.0/24,no-resolve
 IP-CIDR,104.29.68.0/22,no-resolve
 IP-CIDR,104.29.72.0/21,no-resolve
 IP-CIDR,104.29.80.0/23,no-resolve
+IP-CIDR,104.29.82.0/24,no-resolve
 IP-CIDR,104.29.85.0/24,no-resolve
 IP-CIDR,104.29.86.0/24,no-resolve
 IP-CIDR,104.29.88.0/21,no-resolve
@@ -620,8 +620,8 @@ IP-CIDR,141.101.108.0/23,no-resolve
 IP-CIDR,141.101.110.0/24,no-resolve
 IP-CIDR,141.101.112.0/20,no-resolve
 IP-CIDR,143.14.251.0/24,no-resolve
+IP-CIDR,143.20.247.0/24,no-resolve
 IP-CIDR,150.48.128.0/18,no-resolve
-IP-CIDR,151.243.132.0/24,no-resolve
 IP-CIDR,152.114.0.0/17,no-resolve
 IP-CIDR,152.114.128.0/18,no-resolve
 IP-CIDR,154.81.141.0/24,no-resolve
@@ -675,13 +675,13 @@ IP-CIDR,162.159.128.0/17,no-resolve
 IP-CIDR,162.251.82.0/24,no-resolve
 IP-CIDR,165.101.60.0/23,no-resolve
 IP-CIDR,167.1.137.0/24,no-resolve
+IP-CIDR,167.74.142.0/23,no-resolve
 IP-CIDR,169.197.101.0/24,no-resolve
 IP-CIDR,170.168.7.0/24,no-resolve
 IP-CIDR,170.176.163.0/24,no-resolve
 IP-CIDR,172.64.32.0/19,no-resolve
 IP-CIDR,172.64.64.0/19,no-resolve
-IP-CIDR,172.64.96.0/23,no-resolve
-IP-CIDR,172.64.98.0/24,no-resolve
+IP-CIDR,172.64.96.0/22,no-resolve
 IP-CIDR,172.64.144.0/20,no-resolve
 IP-CIDR,172.64.176.0/24,no-resolve
 IP-CIDR,172.64.178.0/23,no-resolve
@@ -690,7 +690,7 @@ IP-CIDR,172.64.198.0/23,no-resolve
 IP-CIDR,172.64.200.0/23,no-resolve
 IP-CIDR,172.64.203.0/24,no-resolve
 IP-CIDR,172.64.228.0/22,no-resolve
-IP-CIDR,172.64.235.0/24,no-resolve
+IP-CIDR,172.64.234.0/23,no-resolve
 IP-CIDR,172.64.236.0/22,no-resolve
 IP-CIDR,172.64.240.0/20,no-resolve
 IP-CIDR,172.65.0.0/16,no-resolve
@@ -721,7 +721,7 @@ IP-CIDR,172.68.84.0/22,no-resolve
 IP-CIDR,172.68.88.0/21,no-resolve
 IP-CIDR,172.68.96.0/21,no-resolve
 IP-CIDR,172.68.104.0/23,no-resolve
-IP-CIDR,172.68.106.0/24,no-resolve
+IP-CIDR,172.68.107.0/24,no-resolve
 IP-CIDR,172.68.108.0/22,no-resolve
 IP-CIDR,172.68.112.0/21,no-resolve
 IP-CIDR,172.68.121.0/24,no-resolve
@@ -778,8 +778,7 @@ IP-CIDR,172.69.96.0/23,no-resolve
 IP-CIDR,172.69.99.0/24,no-resolve
 IP-CIDR,172.69.100.0/22,no-resolve
 IP-CIDR,172.69.104.0/21,no-resolve
-IP-CIDR,172.69.112.0/23,no-resolve
-IP-CIDR,172.69.114.0/24,no-resolve
+IP-CIDR,172.69.112.0/22,no-resolve
 IP-CIDR,172.69.117.0/24,no-resolve
 IP-CIDR,172.69.118.0/23,no-resolve
 IP-CIDR,172.69.120.0/21,no-resolve
@@ -929,6 +928,6 @@ IP-CIDR,216.19.107.0/24,no-resolve
 IP-CIDR,216.74.106.0/24,no-resolve
 IP-CIDR,216.224.121.0/24,no-resolve
 IP-CIDR,217.180.22.0/24,no-resolve
-# AS149648 (RESERVED)
-# APNIC ASN block
+# AS149648 (IRINN-AWSPL-AS-IN)
+# ARJUN WIRELESS SOLUTIONS PRIVATE LIMITED
 #
