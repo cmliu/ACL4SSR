@@ -1,7 +1,13 @@
+# DLSite
 DOMAIN-SUFFIX,dlsite.com
 DOMAIN-SUFFIX,dlsite.jp
+
+# Pixiv 全家桶
 DOMAIN-SUFFIX,pixiv.net
 DOMAIN-SUFFIX,pximg.net
 DOMAIN-SUFFIX,pixiv.org
 DOMAIN-SUFFIX,pixivsketch.net
 DOMAIN-SUFFIX,fanbox.cc
+
+# Pixiv 固定 IP
+IP-CIDR,210.140.139.137/32
