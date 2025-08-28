@@ -39,4 +39,6 @@ DOMAIN-KEYWORD,long.wechat
 DOMAIN-KEYWORD,short.wechat
 DOMAIN-KEYWORD,long.weixin
 DOMAIN-KEYWORD,short.weixin
+DOMAIN,short.weixin.qq.com
+DOMAIN,extshort.weixin.qq.com
 DOMAIN-KEYWORD,google
