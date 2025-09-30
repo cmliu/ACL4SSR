@@ -20,7 +20,7 @@ jobs:
           python-version: '3.x'
 
       - name: Convert INI -> SR .conf
-        run: python tools/ini_to_sr.py
+        run:  python Clash/config/tools/ini_to_sr.py
 
       - name: Commit changes
         uses: stefanzweifel/git-auto-commit-action@v5
