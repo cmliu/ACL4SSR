@@ -1,8 +1,4 @@
-# 内容：交易所 / 加密货币
-# 来源：用户自定义 JSON 转换
-# 数量：DOMAIN-KEYWORD 共 63 条，DOMAIN-SUFFIX 共 228 条
-
-# ----- DOMAIN-KEYWORD -----
+# ---- from JSON: domain_keyword ----
 DOMAIN-KEYWORD,arweave
 DOMAIN-KEYWORD,binance
 DOMAIN-KEYWORD,bitcoin
@@ -68,7 +64,7 @@ DOMAIN-KEYWORD,wintermute
 DOMAIN-KEYWORD,wisekey
 DOMAIN-KEYWORD,yingwangtech
 
-# ----- DOMAIN-SUFFIX -----
+# ---- from JSON: domain_suffix ----
 DOMAIN-SUFFIX,1inch.io
 DOMAIN-SUFFIX,1ml.com
 DOMAIN-SUFFIX,aad90d5c0e88c4b4285bd912f64d970d-1403944741.ap-northeast-1.elb.amazonaws.com
