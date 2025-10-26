@@ -14,3 +14,7 @@ IP-CIDR,210.140.139.0/24
 
 #Trickcal Revive
 PROCESS-NAME,com.bilibili.trickcal
+
+#ASMR
+DOMAIN-SUFFIX,nicochannel.jp
+DOMAIN-SUFFIX,nicovideo.jp
