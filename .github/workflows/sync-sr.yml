@@ -1,0 +1,29 @@
+name: Sync Shadowrocket from Clash INI
+
+on:
+  push:
+    branches: [ patch-1 ]
+    paths:
+      - 'Clash/config/ACL4SSR_Online_Full.ini'
+  workflow_dispatch: {}
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Convert INI -> SR .conf
+        run:  python Clash/config/tools/ini_to_sr.py
+
+      - name: Commit changes
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: 'chore: auto-sync Shadowrocket LUCK.conf from Clash INI'
+          file_pattern: 'Clash/config/LUCK.conf'
