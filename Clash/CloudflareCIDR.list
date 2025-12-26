@@ -133,9 +133,7 @@ IP-CIDR,154.83.30.0/23,no-resolve
 IP-CIDR,154.84.14.0/23,no-resolve
 IP-CIDR,154.84.16.0/21,no-resolve
 IP-CIDR,154.84.24.0/22,no-resolve
-IP-CIDR,154.85.8.0/22,no-resolve
 IP-CIDR,154.92.9.0/24,no-resolve
-IP-CIDR,154.94.8.0/23,no-resolve
 IP-CIDR,154.194.12.0/24,no-resolve
 IP-CIDR,154.197.64.0/23,no-resolve
 IP-CIDR,154.197.75.0/24,no-resolve
@@ -152,7 +150,6 @@ IP-CIDR,154.219.5.0/24,no-resolve
 IP-CIDR,155.46.167.0/24,no-resolve
 IP-CIDR,155.46.213.0/24,no-resolve
 IP-CIDR,156.225.72.0/24,no-resolve
-IP-CIDR,156.237.4.0/23,no-resolve
 IP-CIDR,156.243.246.0/24,no-resolve
 IP-CIDR,156.252.2.0/23,no-resolve
 IP-CIDR,159.112.235.0/24,no-resolve
@@ -228,7 +225,6 @@ IP-CIDR,194.152.44.0/24,no-resolve
 IP-CIDR,194.169.194.0/24,no-resolve
 IP-CIDR,195.26.229.0/24,no-resolve
 IP-CIDR,195.28.190.0/23,no-resolve
-IP-CIDR,195.82.109.0/24,no-resolve
 IP-CIDR,195.85.23.0/24,no-resolve
 IP-CIDR,195.85.59.0/24,no-resolve
 IP-CIDR,195.189.177.0/24,no-resolve
@@ -680,7 +676,9 @@ IP-CIDR,162.158.36.0/22,no-resolve
 IP-CIDR,162.158.40.0/22,no-resolve
 IP-CIDR,162.158.44.0/23,no-resolve
 IP-CIDR,162.158.46.0/24,no-resolve
-IP-CIDR,162.158.48.0/21,no-resolve
+IP-CIDR,162.158.48.0/23,no-resolve
+IP-CIDR,162.158.50.0/24,no-resolve
+IP-CIDR,162.158.52.0/22,no-resolve
 IP-CIDR,162.158.56.0/24,no-resolve
 IP-CIDR,162.158.59.0/24,no-resolve
 IP-CIDR,162.158.60.0/22,no-resolve
@@ -753,7 +751,6 @@ IP-CIDR,167.74.94.0/23,no-resolve
 IP-CIDR,167.74.130.0/24,no-resolve
 IP-CIDR,167.74.140.0/22,no-resolve
 IP-CIDR,169.40.133.0/24,no-resolve
-IP-CIDR,169.197.101.0/24,no-resolve
 IP-CIDR,170.168.7.0/24,no-resolve
 IP-CIDR,170.176.163.0/24,no-resolve
 IP-CIDR,172.64.32.0/19,no-resolve
@@ -903,7 +900,8 @@ IP-CIDR,172.69.180.0/23,no-resolve
 IP-CIDR,172.69.182.0/24,no-resolve
 IP-CIDR,172.69.184.0/24,no-resolve
 IP-CIDR,172.69.186.0/23,no-resolve
-IP-CIDR,172.69.188.0/22,no-resolve
+IP-CIDR,172.69.188.0/23,no-resolve
+IP-CIDR,172.69.191.0/24,no-resolve
 IP-CIDR,172.69.192.0/21,no-resolve
 IP-CIDR,172.69.200.0/22,no-resolve
 IP-CIDR,172.69.205.0/24,no-resolve
