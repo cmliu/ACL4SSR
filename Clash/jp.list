@@ -18,3 +18,7 @@ PROCESS-NAME,com.bilibili.trickcal
 #ASMR
 DOMAIN-SUFFIX,nicochannel.jp
 DOMAIN-SUFFIX,nicovideo.jp
+
+#拷贝漫画
+DOMAIN-SUFFIX,copy20.com
+DOMAIN-SUFFIX,copymanga.com
