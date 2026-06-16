@@ -2,7 +2,7 @@ name: 更新白嫖IP库
 on:
   workflow_dispatch:
   schedule:
-    - cron: '30 21 * * *'  # 每天的8点、16点执行（UTC时间）
+    - cron: '30 21 * * 3'  # 每周三 21:30 UTC 执行（北京时间周四 05:30）
 
 permissions:
   contents: write

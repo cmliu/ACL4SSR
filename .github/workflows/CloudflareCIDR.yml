@@ -2,7 +2,7 @@ name: 更新 Clash/CloudflareCIDR.list
 
 on:
   schedule:
-    - cron: '5 * */5 * *'
+    - cron: '5 * * * 2'  # 每周二 UTC 每小时第 5 分钟执行（北京时间周二 08:05 至周三 07:05，每小时一次）
   workflow_dispatch:  # 允许手动触发
 
 jobs:
