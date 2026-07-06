@@ -15,6 +15,49 @@ cidr_path = "CloudflareCIDR.txt"
 included_asns = ['209242', '13335', '149648', '132892', '139242', '202623', '203898', '394536']
 ip_addresses = []
 
+def safe_remove_file(path):
+    try:
+        if os.path.isfile(path):
+            os.remove(path)
+    except Exception as e:
+        print(f"Warning: 删除文件 {path} 时出错: {e}")
+
+def safe_rmtree(path):
+    """
+    更稳健地删除目录：
+    - 如果目录不存在则静默返回
+    - 对可能的 OSError/FileNotFoundError 做捕获
+    - 尝试使用 ignore_errors=True 作为兜底（在某些场景下更稳妥）
+    """
+    try:
+        if not path:
+            return
+        # 只在路径存在且为目录时调用 rmtree
+        if os.path.isdir(path):
+            # 优先直接调用 rmtree，捕获常见异常
+            try:
+                shutil.rmtree(path)
+            except FileNotFoundError:
+                # 竞态导致已被删除，忽略
+                pass
+            except PermissionError as e:
+                # 权限问题时打印警告并尝试 ignore_errors 作为兜底
+                print(f"Warning: 删除目录 {path} 时权限错误: {e}, 尝试 ignore_errors=True")
+                try:
+                    shutil.rmtree(path, ignore_errors=True)
+                except Exception:
+                    pass
+            except OSError as e:
+                # 其他 OS 级错误，尝试 ignore_errors
+                print(f"Warning: 删除目录 {path} 时出错: {e}, 尝试 ignore_errors=True")
+                try:
+                    shutil.rmtree(path, ignore_errors=True)
+                except Exception:
+                    pass
+    except Exception as e:
+        # 最外层兜底，确保不会把异常抛到 workflow 里导致失败
+        print(f"Warning: safe_rmtree 异常: {e}")
+
 try:
     # 下载 zip 文件
     r = requests.get(url, timeout=30)
@@ -56,23 +99,11 @@ try:
                 clash_file.write(f"{ip}\n")
 
 finally:
-    # 清理下载和解压的文件夹，先检查是否存在（避免抛 FileNotFoundError）
-    try:
-        if os.path.isfile(zip_name):
-            os.remove(zip_name)
-    except Exception as e:
-        print(f"Warning: 删除 {zip_name} 时出错: {e}")
+    # 清理下载和解压的文件夹，使用安全删除函数，避免抛出未捕获异常导致 job 失败
+    safe_remove_file(zip_name)
 
-    try:
-        # 如果我们推断出的 root 存在则删除
-        if 'root' in locals() and os.path.isdir(root):
-            shutil.rmtree(root)
-        else:
-            # 兜底判断常见目录名
-            if os.path.isdir("asn-ip-master"):
-                shutil.rmtree("asn-ip-master")
-    except FileNotFoundError:
-        # 已被删除或不存在，忽略
-        pass
-    except Exception as e:
-        print(f"Warning: 删除解压目录时出错: {e}")
+    # 删除推断出的 root 目录或常见目录名（都使用 safe_rmtree）
+    if 'root' in locals():
+        safe_rmtree(root)
+    # 兜底：常见目录名
+    safe_rmtree("asn-ip-master")
