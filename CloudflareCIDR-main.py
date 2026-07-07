@@ -1,46 +1,49 @@
 import os
-import shutil
-import zipfile
+import sys
 import requests
-import re  # 导入正则表达式库
 
-# 下载zip文件
-url = "https://github.com/ipverse/asn-ip/archive/refs/heads/master.zip"
-r = requests.get(url)
-with open("master.zip", "wb") as code:
-  code.write(r.content)
-
-# 解压zip文件
-with zipfile.ZipFile("master.zip", 'r') as zip_ref:
-  zip_ref.extractall(".")
-
-# 将结果存储在这个列表中
-ip_addresses = []
+# 需要拉取的 ASN 列表
 included_asns = ['209242', '13335', '149648', '132892', '139242', '202623', '203898', '394536']
 
-# 遍历as文件夹
-for root, dirs, files in os.walk("asn-ip-master/as"):
-  if 'ipv4-aggregated.txt' in files:
-    asn = root.split('/')[-1]
-    if asn in included_asns:
-      with open(os.path.join(root, 'ipv4-aggregated.txt'), 'r') as file:
-        ips = file.read().splitlines()
-        ip_addresses.extend(ips)
+asn_data_list = []
 
-# 正则表达式用于匹配IPv4地址和子网掩码
-ipv4_regex = re.compile(r'^(\d{1,3}\.){3}\d{1,3}(/\d{1,2})$')
+print("开始获取 ASN 数据...")
+for asn in included_asns:
+    url = f"https://raw.githubusercontent.com/ipverse/as-ip-blocks/refs/heads/master/as/{asn}/aggregated.json"
+    try:
+        response = requests.get(url, timeout=20)
+        response.raise_for_status()
+        data = response.json()
+        asn_data_list.append(data)
+        print(f"ASN {asn} 下载成功")
+    except Exception as e:
+        print(f"错误: 下载 ASN {asn} 数据失败: {e}")
+        sys.exit(1)
 
-# 将结果写入两个文件
-with open('Clash/CloudflareCIDR.list', 'w') as clash_file, \
-     open('CloudflareCIDR.txt', 'w') as cidr_file:
-  for ip in ip_addresses:
-    # 检查IP是否符合IPv4/子网掩码格式
-    if ipv4_regex.match(ip):
-      clash_file.write(f"IP-CIDR,{ip},no-resolve\n")
-      cidr_file.write(f"{ip}\n")
-    else:
-      clash_file.write(f"{ip}\n")
+# 确保 Clash 目录存在
+os.makedirs('Clash', exist_ok=True)
 
-# 清理下载的zip文件和解压的文件夹
-os.remove("master.zip")
-shutil.rmtree("asn-ip-master")
+# 写入输出文件
+print("开始整理并写入本地文件...")
+with open('Clash/CloudflareCIDR.list', 'w', encoding='utf-8') as clash_file, \
+     open('CloudflareCIDR.txt', 'w', encoding='utf-8') as cidr_file:
+     
+    for data in asn_data_list:
+        asn = data.get("asn", "")
+        metadata = data.get("metadata", {})
+        handle = metadata.get("handle", "") or ""
+        description = metadata.get("description", "") or ""
+        
+        # 写入 Clash 格式的注释头部
+        clash_file.write(f"# AS{asn} ({handle.strip()})\n")
+        clash_file.write(f"# {description.strip()}\n")
+        clash_file.write("#\n")
+        
+        # 写入 IPv4 列表
+        ipv4_prefixes = data.get("prefixes", {}).get("ipv4", [])
+        for ip in ipv4_prefixes:
+            clash_file.write(f"IP-CIDR,{ip},no-resolve\n")
+            cidr_file.write(f"{ip}\n")
+
+print("所有 ASN 数据下载并整理完成！")
+
