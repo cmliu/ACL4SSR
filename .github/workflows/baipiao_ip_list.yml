@@ -1,8 +1,8 @@
-name: 更新白嫖IP库
+name: 更新反代IP库
 on:
   workflow_dispatch:
-  schedule:
-    - cron: '30 21 * * 3'  # 每周三 21:30 UTC 执行（北京时间周四 05:30）
+  #schedule:
+  #  - cron: '30 21 * * 3'  # 每周三 21:30 UTC 执行（北京时间周四 05:30）
 
 permissions:
   contents: write
@@ -11,7 +11,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      PROXYIP_URL: ${{ vars.PROXYIP_URL }}
+      PROXYIP_URL: ${{ secrets.PROXYIP_URL || vars.PROXYIP_URL }}
     steps:
       - name: 检出代码仓库
         uses: actions/checkout@v4
@@ -23,12 +23,11 @@ jobs:
             echo "❌ 错误: 未设置 PROXYIP_URL 变量"
             echo "请在仓库设置中添加 PROXYIP_URL 变量："
             echo "1. 进入仓库 Settings > Secrets and variables > Actions"
-            echo "2. 在 Variables 标签页中添加新变量"
-            echo "3. Name: PROXYIP_URL"
-            echo "4. Value: 配置文件的URL地址"
+            echo "2. 在 Secrets 或 Variables 中添加 PROXYIP_URL"
             exit 1
           fi
-          echo "✅ PROXYIP_URL 变量已设置: $PROXYIP_URL"
+          echo "::add-mask::$PROXYIP_URL"
+          echo "✅ PROXYIP_URL 变量已设置"
 
       - name: Check URL status
         id: check_url
@@ -53,13 +52,13 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          
+
           # 检查文件是否有变化
           if [ ! -f baipiao.txt ] || [ ! -s baipiao.txt ]; then
             echo "baipiao.txt 文件不存在或为空，跳过提交"
             exit 0
           fi
-          
+
           if git diff --quiet baipiao.txt 2>/dev/null; then
             echo "baipiao.txt 文件没有变化，跳过提交"
           else
