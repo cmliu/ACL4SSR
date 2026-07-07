@@ -10,6 +10,8 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      PROXYIP_URL: ${{ vars.PROXYIP_URL }}
     steps:
       - name: 检出代码仓库
         uses: actions/checkout@v4
@@ -17,7 +19,6 @@ jobs:
       - name: Check PROXYIP_URL variable
         run: |
           # 检查是否设置了PROXYIP_URL变量
-          PROXYIP_URL="${{ vars.PROXYIP_URL }}"
           if [ -z "$PROXYIP_URL" ]; then
             echo "❌ 错误: 未设置 PROXYIP_URL 变量"
             echo "请在仓库设置中添加 PROXYIP_URL 变量："
