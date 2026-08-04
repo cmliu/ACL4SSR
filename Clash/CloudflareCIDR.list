@@ -561,6 +561,8 @@ IP-CIDR,152.114.0.0/17,no-resolve
 IP-CIDR,152.114.128.0/18,no-resolve
 IP-CIDR,154.46.20.0/24,no-resolve
 IP-CIDR,154.81.141.0/24,no-resolve
+IP-CIDR,154.84.164.0/24,no-resolve
+IP-CIDR,154.86.118.0/24,no-resolve
 IP-CIDR,154.193.133.0/24,no-resolve
 IP-CIDR,154.193.184.0/24,no-resolve
 IP-CIDR,154.200.89.0/24,no-resolve
@@ -1066,6 +1068,7 @@ IP-CIDR,202.27.69.0/24,no-resolve
 IP-CIDR,202.49.114.0/24,no-resolve
 IP-CIDR,203.5.33.0/24,no-resolve
 IP-CIDR,203.15.65.0/24,no-resolve
+IP-CIDR,203.117.8.0/24,no-resolve
 IP-CIDR,203.117.53.0/24,no-resolve
 IP-CIDR,203.120.52.0/24,no-resolve
 IP-CIDR,204.4.235.0/24,no-resolve
@@ -1102,6 +1105,7 @@ IP-CIDR,216.224.121.0/24,no-resolve
 IP-CIDR,217.180.16.0/23,no-resolve
 IP-CIDR,218.33.92.0/22,no-resolve
 IP-CIDR,222.167.32.0/22,no-resolve
+IP-CIDR,222.167.230.0/24,no-resolve
 # AS149648 (IRINN-AWSPL-AS-IN)
 # ARJUN WIRELESS SOLUTIONS PRIVATE LIMITED
 #
