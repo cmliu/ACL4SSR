@@ -596,7 +596,8 @@ IP-CIDR,104.22.249.0/24,no-resolve
 IP-CIDR,104.22.250.0/23,no-resolve
 IP-CIDR,104.22.252.0/23,no-resolve
 IP-CIDR,104.22.254.0/24,no-resolve
-IP-CIDR,104.23.96.0/24,no-resolve
+IP-CIDR,104.23.96.0/22,no-resolve
+IP-CIDR,104.23.100.0/24,no-resolve
 IP-CIDR,104.23.160.0/20,no-resolve
 IP-CIDR,104.23.176.0/23,no-resolve
 IP-CIDR,104.23.178.0/24,no-resolve
